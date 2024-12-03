@@ -20,10 +20,12 @@ public class AlphaVantageClient {
         return restTemplate.getForObject(url, String.class);
     }
 
-    public String fetchCurrencyExchangeRate(String fromCurrency, String toCurrency) {
-        String url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE" +
-                "&from_currency=" + fromCurrency +
-                "&to_currency=" + toCurrency +
+    public String fetchForex(String function, String from_symbol, String to_symbol, String outputSize) {
+        String baseUrl = "https://www.alphavantage.co/query?";
+        String url = baseUrl + "function=" + function +
+                "&from_symbol=" + from_symbol +
+                "&to_symbol=" + to_symbol +
+                "&outputsize=" + (outputSize != null ? outputSize : "compact") +
                 "&apikey=" + apiKey;
 
         return restTemplate.getForObject(url, String.class);

@@ -41,8 +41,8 @@ public class MarketDataService {
 
     // Метод для Forex временных рядов
     public void fetchAndSaveForexData(String function, String fromSymbol, String toSymbol, String outputSize) {
-        String response = apiClient.fetchData(function, fromSymbol, toSymbol, outputSize);
-        processForexData(response, fromSymbol, toSymbol, "fx_daily"); // Указываем тип данных, например, DAILY
+        String response = apiClient.fetchForex(function, fromSymbol, toSymbol, outputSize);
+        processForexData(response, fromSymbol, toSymbol, "forex_daily"); // Указываем тип данных, например, DAILY
     }
 
     // Обработка данных акций
@@ -142,7 +142,6 @@ public class MarketDataService {
         }
     }
 
-
     private JsonNode findTimeSeriesNode(JsonNode root, String type) {
         Map<String, String> nodeNames = Map.of(
                 "daily", "Time Series (Daily)",
@@ -151,9 +150,9 @@ public class MarketDataService {
                 "digital_daily", "Time Series (Digital Currency Daily)",
                 "digital_weekly", "Time Series (Digital Currency Weekly)",
                 "digital_monthly", "Time Series (Digital Currency Monthly)",
-                "fx_daily", "Time Series FX (Daily)",
-                "fx_weekly", "Time Series FX (Weekly)",
-                "fx_monthly", "Time Series FX (Monthly)"
+                "forex_daily", "Time Series FX (Daily)",
+                "forex_weekly", "Time Series FX (Weekly)",
+                "forex_monthly", "Time Series FX (Monthly)"
         );
 
         String nodeName = nodeNames.getOrDefault(type.toLowerCase(), null);
