@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ForexDataRepository extends JpaRepository<ForexData, Long> {
-    @Query(value = "SELECT * FROM forex_data WHERE from_symbol = ?1 AND to_symbol = ?2 ORDER BY record_date ASC LIMIT 365", nativeQuery = true)
+    @Query(value = "SELECT * FROM forex_data WHERE from_symbol = ?1 AND to_symbol = ?2 ORDER BY record_date DESC LIMIT 100", nativeQuery = true)
     List<ForexData> findFirst100BySymbol(String fromSymbol, String toSymbol);
 }

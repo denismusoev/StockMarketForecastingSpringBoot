@@ -56,6 +56,7 @@ public class PredictionController {
             // Добавляем данные и количество дней
             payload.put("data", data);
             payload.put("dayCount", request.getDayCount());
+            payload.put("model", request.getModel());
 
             // Преобразуем объект в JSON строку
             String jsonPayload = objectMapper.writeValueAsString(payload);

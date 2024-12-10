@@ -12,5 +12,6 @@ public class PredictionRequest {
     private String fromSymbol; // Исходная валюта (для Forex)
     private String toSymbol; // Целевая валюта (для Forex)
     private int dayCount; // Количество прогнозов
+    private String model;
 }
 

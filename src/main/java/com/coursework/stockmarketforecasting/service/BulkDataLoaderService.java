@@ -44,8 +44,8 @@ public class BulkDataLoaderService {
 
         for (String symbol : symbols) {
             marketDataService.fetchAndSaveStockData("TIME_SERIES_DAILY", symbol, "compact");
-            marketDataService.fetchAndSaveStockData("TIME_SERIES_WEEKLY", symbol, "compact");
-            marketDataService.fetchAndSaveStockData("TIME_SERIES_MONTHLY", symbol, "compact");
+//            marketDataService.fetchAndSaveStockData("TIME_SERIES_WEEKLY", symbol, "compact");
+//            marketDataService.fetchAndSaveStockData("TIME_SERIES_MONTHLY", symbol, "compact");
         }
     }
 
@@ -56,8 +56,8 @@ public class BulkDataLoaderService {
 
         for (String symbol : cryptoSymbols) {
             marketDataService.fetchAndSaveCryptoData("DIGITAL_CURRENCY_DAILY", symbol, market, "compact");
-            marketDataService.fetchAndSaveCryptoData("DIGITAL_CURRENCY_WEEKLY", symbol, market, "compact");
-            marketDataService.fetchAndSaveCryptoData("DIGITAL_CURRENCY_MONTHLY", symbol, market, "compact");
+//            marketDataService.fetchAndSaveCryptoData("DIGITAL_CURRENCY_WEEKLY", symbol, market, "compact");
+//            marketDataService.fetchAndSaveCryptoData("DIGITAL_CURRENCY_MONTHLY", symbol, market, "compact");
         }
     }
 
@@ -72,8 +72,8 @@ public class BulkDataLoaderService {
 
         for (String[] pair : forexPairs) {
             marketDataService.fetchAndSaveForexData("FX_DAILY", pair[0], pair[1], "compact");
-            marketDataService.fetchAndSaveForexData("FX_WEEKLY", pair[0], pair[1], "compact");
-            marketDataService.fetchAndSaveForexData("FX_MONTHLY", pair[0], pair[1], "compact");
+//            marketDataService.fetchAndSaveForexData("FX_WEEKLY", pair[0], pair[1], "compact");
+//            marketDataService.fetchAndSaveForexData("FX_MONTHLY", pair[0], pair[1], "compact");
         }
     }
 }
